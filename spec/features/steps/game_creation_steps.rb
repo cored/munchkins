@@ -3,16 +3,20 @@ module GameCreationSteps
     Contexts::Games::Creator.create(game_name)
   end
 
+  step "a player with name :player_name exists" do |player_name| 
+    Contexts::Players::Creator.create(player_name)
+  end
+
   step "a player with name :player_name is assign to game :game_name" do |player_name, game_name|
     Contexts::Games::PlayerAssigner.assign(player_name, game_name)
   end
 
   step "game :game_name deals cards" do |game_name| 
-    @game = Contexts::Games::DealCards.for(game_name)
+    @game_state = Contexts::Games::DealCards.for(game_name)
   end
 
   step "the game should show the message: :msg" do |msg| 
-    expect(@game.state[:message]).to eql "Minimum game players is 2"
+    expect(@game_state.message).to eql "Minimum game players is 2"
   end
 end
 
