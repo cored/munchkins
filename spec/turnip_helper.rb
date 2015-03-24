@@ -1,1 +1,1 @@
-Dir.glob("spec/features/steps/**/*steps").each { |f| load f; true }
+Dir.glob("spec/features/steps/**/*steps.rb").each { |f| load f, true }
