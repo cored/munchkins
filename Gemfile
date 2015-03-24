@@ -9,6 +9,12 @@ gem 'lotus-model', '~> 0.2'
 group :test do
   gem 'rspec'
   gem 'capybara'
+  gem 'turnip'
+end
+
+group :development do 
+  gem 'pry'
+  gem 'pry-nav'
 end
 
 group :production do
