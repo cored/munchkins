@@ -11,8 +11,8 @@ module Contexts
 
       def for(game_name)
         game = games.find_by_name(game_name)
-        if (game.players.size < 2)
-          GameState.new(message: "Minimum game players is 2")
+        if (game.players.count < 2)
+          GameState.new("Minimum game players is 2")
         end
       end
 
