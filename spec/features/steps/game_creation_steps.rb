@@ -18,6 +18,10 @@ module GameCreationSteps
   step "the game should show the message: :msg" do |msg| 
     expect(@game_state.message).to eql "Minimum game players is 2"
   end
+
+  step "the game should be invalid" do 
+    expect(@game_state.valid?).to eql false
+  end
 end
 
 RSpec.configure { |c| c.include GameCreationSteps }
