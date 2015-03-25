@@ -1,6 +1,6 @@
-Feature: Game creation 
-  As an organizer 
-  In order to start a new game 
+Feature: Game creation
+  As an organizer
+  In order to start a new game
   I want to be able to setup the game
 
   Scenario: 1 Player
@@ -31,3 +31,21 @@ Feature: Game creation
     When game "GameNight" deals cards
     Then the game should show the message: "Maximum amount of players is 6"
     And the game should be invalid
+
+  Scenario: 6 Players
+    Given a game with name "GameNight" exists
+    And a player with name "Rafael" exists
+    And a player with name "Rafael" is assign to game "GameNight"
+    And a player with name "Roger" exists
+    And a player with name "Roger" is assign to game "GameNight"
+    And a player with name "Karina" exists
+    And a player with name "Karina" is assign to game "GameNight"
+    And a player with name "Ramon" exists
+    And a player with name "Ramon" is assign to game "GameNight"
+    And a player with name "Julio" exists
+    And a player with name "Julio" is assign to game "GameNight"
+    And a player with name "Marco" exists
+    And a player with name "Marco" is assign to game "GameNight"
+    When game "GameNight" deals cards
+    Then the game should be valid
+
