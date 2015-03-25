@@ -22,6 +22,10 @@ module GameCreationSteps
   step "the game should be invalid" do 
     expect(@game_state.valid?).to eql false
   end
+
+  step "the game should be valid" do 
+    expect(@game_state.valid?).to eql true
+  end
 end
 
 RSpec.configure { |c| c.include GameCreationSteps }
