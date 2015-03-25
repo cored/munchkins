@@ -16,7 +16,7 @@ module GameCreationSteps
   end
 
   step "the game should show the message: :msg" do |msg| 
-    expect(@game_state.message).to eql "Minimum game players is 2"
+    expect(@game_state.errors).to eql [msg]
   end
 
   step "the game should be invalid" do 
